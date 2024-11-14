@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@Table(name="tb_user")
+@Table(name="test_user")
 @Entity
 public class User {
     @Id
