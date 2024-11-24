@@ -16,7 +16,12 @@ public class ResponseMessage<T> {
 
     // 接口请求成功
     public static <T> ResponseMessage<T> success(T data) {
-        return new ResponseMessage(HttpStatus.OK.value(), "success!", data);
+        return new ResponseMessage<>(HttpStatus.OK.value(), "success!", data);
+    }
+
+    // 接口请求成功
+    public static <T> ResponseMessage<T> success() {
+        return new ResponseMessage<>(HttpStatus.OK.value(), "success!", null);
     }
 
     public Integer getCode() {
