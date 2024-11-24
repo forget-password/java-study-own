@@ -44,4 +44,8 @@ public class UserService implements IUserService {
          userRepository.deleteById(userId) ;
     }
 
+    @Override
+    public Iterable<User> getAllUser() {
+        return userRepository.findAll();
+    }
 }

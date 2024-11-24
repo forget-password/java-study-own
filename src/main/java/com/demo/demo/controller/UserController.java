@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController // 接口方法返回对象 转换成 json 文本
 @RequestMapping("/user") // localhost:8080/user
 public class UserController {
@@ -36,9 +38,15 @@ public class UserController {
         return ResponseMessage.success(userNew);
     }
     // 删除
-    @DeleteMapping
+    @DeleteMapping("/{userId}")
     public ResponseMessage<User> deleteUser(@PathVariable("userId") Integer userId) {
         userService.deleteUser(userId);
         return ResponseMessage.success();
+    }
+
+    @GetMapping("/all")
+    public ResponseMessage<Iterable<User>> getAllUser() {
+        Iterable<User> userList = userService.getAllUser();
+        return ResponseMessage.success(userList);
     }
 }

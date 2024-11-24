@@ -18,12 +18,6 @@ public interface IUserService {
      */
     User getUser(Integer userId);
 
-    // /**
-    //  * 查询所有用户
-    //  * @return
-    //  */
-    // List<User> getUserAll();
-
     /**
      * 修改用户
      * @param user
@@ -37,4 +31,10 @@ public interface IUserService {
      * @return
      */
     void deleteUser(Integer userId);
+
+    /**
+     * 获取所有用户
+     * @return
+     */
+    Iterable<User> getAllUser();
 }
